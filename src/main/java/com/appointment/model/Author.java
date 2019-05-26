@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.MapsId;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -16,6 +17,7 @@ public class Author {
 	private String name;
 	private String qualification;
 	@OneToOne(mappedBy = "author")
+	@MapsId
 	private Book book;
 
 	public int getId() {
@@ -40,6 +42,14 @@ public class Author {
 
 	public void setQualification(String qualification) {
 		this.qualification = qualification;
+	}
+
+	public Book getBook() {
+		return book;
+	}
+
+	public void setBook(Book book) {
+		this.book = book;
 	}
 
 	@Override
