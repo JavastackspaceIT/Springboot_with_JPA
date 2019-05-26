@@ -24,4 +24,12 @@ public class Author {
 		this.qualification = qualification;
 	}
 	
+	
+	
+	@Override
+	public String toString() {
+		return "Author [id=" + id + ", name=" + name + ", qualification=" + qualification + "]";
+	}
+	
+	
 }
