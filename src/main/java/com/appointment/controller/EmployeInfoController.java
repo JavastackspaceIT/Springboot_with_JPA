@@ -7,26 +7,21 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.appointment.form.BookForm;
+import com.appointment.form.EmployeeInfoForm;
 import com.appointment.response.BookResponse;
-import com.appointment.service.BookStoreService;
+import com.appointment.service.EmployeeInfoService;
 
 @RestController
-public class BookStoreController {
+public class EmployeInfoController {
 
 	@Autowired
-	private BookStoreService bookStoreService;
+	private EmployeeInfoService employeeInfoService;
 
-	@PostMapping(value = "/registerBook")
-	public ResponseEntity<BookResponse> registerBook(@RequestBody BookForm bookForm) {
+	@PostMapping("/insertEmployeeInfo")
+	public ResponseEntity<BookResponse> insertEmployeeInfo(@RequestBody EmployeeInfoForm employeeInfoForm) {
 
-		System.out.println("bookForm " + bookForm);
-		bookStoreService.registerBook(bookForm);
+		employeeInfoService.insertEmployee(employeeInfoForm);
 		BookResponse bookResponse = new BookResponse(HttpStatus.CREATED.value(), "resource has created");
 		return new ResponseEntity<BookResponse>(bookResponse, HttpStatus.ACCEPTED);
-
 	}
-	
-	
-	
 }

@@ -18,16 +18,15 @@ public class BookStoreService {
 
 	public int registerBook(BookForm bookForm) {
 
-		Author author = new Author();
-		author.setName(bookForm.getBookName());
-		author.setQualification(bookForm.getQualification());
+		Book bookObj = new Book();
+        bookObj.setTitle(bookForm.getTitle());
+        bookObj.setDescription(bookForm.getDescription());
 
-		Book book = new Book();
-		book.setBookName("java book");
-		book.setTitile("java developer group");
-		book.setAuthor(author);
+        bookObj.setAuthor(new Author(bookForm.getName(), bookForm.getTitle()));
 
-		bookStoreRepository.save(book);
+        // Persisting (Or Saving) The Book Entity To The Database
+
+		bookStoreRepository.save(bookObj);
 		return 1;
 	}
 }

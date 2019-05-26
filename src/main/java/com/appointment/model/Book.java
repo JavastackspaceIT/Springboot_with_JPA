@@ -1,62 +1,63 @@
 package com.appointment.model;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table
+@Table(name = "book")
 public class Book {
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int id;
-	private String bookName;
-	private String titile;
-	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "id", referencedColumnName = "id")
-	private Author author;
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
-	public String getBookName() {
-		return bookName;
-	}
-
-	public void setBookName(String bookName) {
-		this.bookName = bookName;
-	}
-
-	public String getTitile() {
-		return titile;
-	}
-
-	public void setTitile(String titile) {
-		this.titile = titile;
-	}
-
-	public Author getAuthor() {
-		return author;
-	}
-
-	public void setAuthor(Author author) {
-		this.author = author;
-	}
-
-	@Override
-	public String toString() {
-		return "Book [id=" + id + ", bookName=" + bookName + ", titile=" + titile + ", author=" + author + "]";
-	}
-
+ 
+    @Id
+    @GeneratedValue
+    @Column(name = "book_id")
+    private long id;
+ 
+    @Column(name = "title")
+    private String title;
+ 
+    @Column(name = "description")
+    private String description;
+ 
+    @JoinColumn(name = "author_id")
+    @OneToOne(cascade = CascadeType.ALL)
+    private Author author;
+ 
+    public long getId() {
+        return id;
+    }
+ 
+    public void setId(long id) {
+        this.id = id;
+    }
+ 
+    public String getTitle() {
+        return title;
+    }
+ 
+    public void setTitle(String title) {
+        this.title = title;
+    }
+ 
+    public String getDescription() {
+        return description;
+    }
+ 
+    public void setDescription(String description) {
+        this.description = description;
+    }
+ 
+ 
+    public Author getAuthor() {
+        return author;
+    }
+ 
+    public void setAuthor(Author author) {
+        this.author = author;
+    }
 }

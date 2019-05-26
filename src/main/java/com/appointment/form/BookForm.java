@@ -3,9 +3,9 @@ package com.appointment.form;
 public class BookForm {
 
 	private String name;
-	private String qualification;
-	private String bookName;
+	private String email;
 	private String title;
+	private String description;
 
 	public String getName() {
 		return name;
@@ -15,20 +15,12 @@ public class BookForm {
 		this.name = name;
 	}
 
-	public String getQualification() {
-		return qualification;
+	public String getEmail() {
+		return email;
 	}
 
-	public void setQualification(String qualification) {
-		this.qualification = qualification;
-	}
-
-	public String getBookName() {
-		return bookName;
-	}
-
-	public void setBookName(String bookName) {
-		this.bookName = bookName;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	public String getTitle() {
@@ -39,10 +31,18 @@ public class BookForm {
 		this.title = title;
 	}
 
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
 	@Override
 	public String toString() {
-		return "BookForm [name=" + name + ", qualification=" + qualification + ", bookName=" + bookName + ", title="
-				+ title + "]";
+		return "BookForm [name=" + name + ", email=" + email + ", title=" + title + ", description=" + description
+				+ "]";
 	}
 
 }
