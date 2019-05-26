@@ -25,7 +25,7 @@ public interface UserRepository extends JpaRepository<User, Integer> {
 	@Query("select u from User u")
 	public List<User> getUsersCustomQuery();
 
-	
+	//save method 
 	public void save(StudentDto studentDto);
 
 }
