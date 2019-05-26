@@ -2,9 +2,7 @@ package com.appointment.model;
 
 public class Author {
 
-	  
-	
-	
+	//this is id
 	private int id;
 	private String name;
 	private String qualification;
