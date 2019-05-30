@@ -19,7 +19,7 @@ public class BookStoreController {
 
 	/*
 	
-	 return type : responseEntity 
+	 return type : responseEntity which show the message to end user either book has register or not  
 	 method name  :registerBool
 	 Author : Rakesh kumar 
 	*/
