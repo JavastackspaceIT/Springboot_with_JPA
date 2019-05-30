@@ -17,6 +17,12 @@ public class BookStoreController {
 	@Autowired
 	private BookStoreService bookStoreService;
 
+	/*
+	
+	 return type : responseEntity 
+	 method name  :registerBool
+	 Author : Rakesh kumar 
+	*/
 	@PostMapping(value = "/registerBook")
 	public ResponseEntity<BookResponse> registerBook(@RequestBody BookForm bookForm) {
 
